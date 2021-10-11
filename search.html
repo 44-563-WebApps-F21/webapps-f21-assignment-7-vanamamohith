@@ -15,7 +15,7 @@
         <h1 style="margin-left:10px; text-shadow: 2px 2px lightslategray;">Animal Hunt Mohith Naga Venkata Sai Vanama</h1>
         <br>
         <p style="margin-left:20px; font-size: 20px; color:darkgreen;">Click on the squares to search for wild life</p>
-        <p style="margin-left:20px; font-size: 20px; color:darkcyan;">Number of tries is zero.</p>
+        <p style="margin-left:20px; font-size: 20px; color:darkcyan;" id="tries">Number of tries is zero.</p>
         <p style="margin-left:20px; font-size: 20px; color:darkblue;">Distance is unknown.</p>
         <div class="container">
             <div class="row">
@@ -51,5 +51,26 @@
                 <div class="col-sm-2"><img src="lion.jpg" alt="animal" id="24" style="width: 200px;height: 200px;" onclick="check(24)"></div>
             </div>
         </div>
+        <script>
+            var triesCount = 0;
+            var animalLocation = 13;
+            function check(position)
+            {
+                if(position==animalLocation)
+                {
+                    document.getElementById(position).src = "lion.jpeg"
+                }
+                else{
+                    document.getElementById(position).src = "bighole.jpeg"
+                }
+                triesCount++;
+                triesElement.innerHTML = "" + triesCount;
+                distance(position,animalLocation);
+            }
+            function distance(position,animalLocation)
+            {
+                
+            }
+        </script>
     </body>
 </html>
