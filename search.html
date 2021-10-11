@@ -16,7 +16,7 @@
         <br>
         <p style="margin-left:20px; font-size: 20px; color:darkgreen;">Click on the squares to search for wild life</p>
         <p style="margin-left:20px; font-size: 20px; color:darkcyan;" id="tries">Number of tries is zero.</p>
-        <p style="margin-left:20px; font-size: 20px; color:darkblue;">Distance is unknown.</p>
+        <p style="margin-left:20px; font-size: 20px; color:darkblue;" id="distance">Distance is unknown.</p>
         <div class="container">
             <div class="row">
                 <div class="col-sm-2"><img src="lion.jpg" alt="animal" id="1" style="width: 200px;height: 200px;" onclick="check(0)"></div>
@@ -54,6 +54,8 @@
         <script>
             var triesCount = 0;
             var animalLocation = 13;
+            let triesElement = document.querySelector("#tries em")
+            let distanceElement = document.querySelector("#distance em")
             function check(position)
             {
                 if(position==animalLocation)
@@ -67,9 +69,18 @@
                 triesElement.innerHTML = "" + triesCount;
                 distance(position,animalLocation);
             }
-            function distance(position,animalLocation)
+            function distance(position,animalLoc)
             {
+                let guessX = position % 6
+                let guessY = Math.floor(position / 6)
 
+                let locationX = animalLoc % 6
+                let locationY = Math.floor(animalLoc / 6)
+
+                let diffX = Math.abs(guessX - locationX)
+                let diffY = Math.abs(guessY - locationY)
+
+                distanceElement.innerHTML = "" + Math.max(diffX, diffY)
             }
         </script>
     </body>
