@@ -66,7 +66,7 @@
                     document.getElementById(position).src = "bighole.jpg"
                 }
                 triesCount++;
-                triesElement.innerHTML = "" + triesCount;
+                triesElement.innerHTML = "Number of tries is " + triesCount;
                 distance(position,animalLocation);
             }
             function distance(position,animalLoc)
@@ -80,7 +80,7 @@
                 let diffX = Math.abs(guessX - locationX)
                 let diffY = Math.abs(guessY - locationY)
 
-                distanceElement.innerHTML = "" + Math.max(diffX, diffY)
+                distanceElement.innerHTML = "Distance is " + Math.max(diffX, diffY)
             }
         </script>
     </body>
