@@ -11,27 +11,10 @@
 </head>
 <body>
 
-  <h1>Mohith Naga Venkata Sai Vanama reaction timer</h1>
-
-  <button type="button"
-  class="btn btn-primary"
-  onclick="buttonPress2()">
-  Click me change the color.</button>
-  
+  <h1>Mohith Naga Venkata Sai Vanama reaction timer</h1>  
   <p id="target">I will become red </p>
   
   <script> 
-  function buttonPress1() {
-    setTimeout(function(){
-      document.getElementById('target').style.color = "red"
-    }, 3000)
-  }
-
-  function buttonPress2() {
-    setTimeout(()=>{
-      document.getElementById('target').style.color = "red"
-    }, 3000)
-  }
   var myTime = undefined;
   function recordReact()
   {
@@ -60,8 +43,8 @@
   </script>
   <div id="target">Your Time</div>
   <div id="countdown">Count</div>
-  <button id="timer" onclick="startTime()">Start Timer</button>
-  <button id="react" onclick="recordReact()">React Now</button>
+  <button id="timer" onclick="startTime()" class="btn btn-primary">Start Timer</button>
+  <button id="react" onclick="recordReact()" class="btn btn-primary">React Now</button>
 
 </body>
 </html>
