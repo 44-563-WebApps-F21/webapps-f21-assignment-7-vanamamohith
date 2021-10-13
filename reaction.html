@@ -38,10 +38,19 @@
     myTime = Date.now();
     console.log(myTime);
   }
+  function startTime()
+  {
+    var count = document.getElementById("countdown");
+     for(var i=0;i<=3;i++)
+     {
+        var id = setTimeout(function () { count.innerHTML = "Count: " + i }, (3 - i) * 1000);
+     }
+     setTimeout(() => check(), 3000);
+  }
   </script>
   <div id="target">Your Time</div>
   <div id="countdown">Count</div>
-  <button id="timer">Start Timer</button>
+  <button id="timer" onclick="startTime()">Start Timer</button>
   <button id="react" onclick="recordReact()">React Now</button>
 
 </body>
