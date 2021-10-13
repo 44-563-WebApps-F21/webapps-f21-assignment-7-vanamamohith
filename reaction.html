@@ -32,14 +32,16 @@
       document.getElementById('target').style.color = "red"
     }, 3000)
   }
+  var myTime;
   function recordReact()
   {
-    var myTime = getElementById("react");
+    myTime = Date.now();
+    console.log(myTime);
   }
   </script>
   <div id="target">Your Time</div>
   <div id="countdown">Count</div>
-  <button id="timer" onclick="recordReact()">Start Timer</button>
+  <button id="timer">Start Timer</button>
   <button id="react" onclick="recordReact()">React Now</button>
 
 </body>
