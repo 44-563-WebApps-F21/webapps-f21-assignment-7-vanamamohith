@@ -42,7 +42,7 @@
   {
     buttonTime = Date.now();
     var count = document.getElementById("countdown");
-     for(var i=0;i<=3;i++)
+     for(let i=0;i<4;i++)
      {
         var id = setTimeout(function () { count.innerHTML = "Count: " + i }, (3 - i) * 1000);
      }
