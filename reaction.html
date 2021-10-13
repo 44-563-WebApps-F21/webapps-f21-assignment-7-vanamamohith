@@ -32,18 +32,20 @@
       document.getElementById('target').style.color = "red"
     }, 3000)
   }
-  var myTime;
+  var myTime = undefined;
   function recordReact()
   {
     myTime = Date.now();
-    console.log(myTime);
+    console.log("Current Time in milliseconds is: " + myTime);
   }
   function startTime()
   {
     var count = document.getElementById("countdown");
      for(var i=0;i<=3;i++)
      {
-        var id = setTimeout(function () { count.innerHTML = "Count: " + i }, (3 - i) * 1000);
+        setTimeout(() => {
+                  document.getElementById("countdown").innerHTML = i;
+                }, (3-i)*1000);
      }
      //setTimeout(() => check(), 3000);
   }
