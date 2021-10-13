@@ -46,6 +46,31 @@
 	
 </body>
 <script>
+    function popItem() {
+		var stackItems = document.getElementsByClassName('stack');
+		if (stackItems.length > 0) {
+			stackItems[stackItems.length - 1].remove();
+		}
+        function Zapvalues() {
+		let stackItems = document.getElementsByClassName('stack');
+		let inputData = document.getElementById("name").value;
+		let stacksSize = stackItems.length;
+
+			if(stacksSize == 0){
+			 	alert("No Items in the stack to zap");
+				return;
+			} 
+		
+			for (let index = 0; index < stacksSize; index++) {
+				let element = stackItems[index].innerHTML;
+				if (element == inputData) {
+					console.log(stackItems[index])
+					stackItems[index].remove();
+					index--;
+				}
+
+			}
+	}
 	function makeNewDiv(){
 		/* make the div and its text */
 		let element = document.createElement("p")
